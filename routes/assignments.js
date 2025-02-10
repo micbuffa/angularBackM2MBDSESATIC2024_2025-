@@ -36,7 +36,7 @@ function postAssignment(req, res){
         if(err){
             res.send('cant post assignment ', err);
         }
-        res.json({ message: `${assignment.nom} saved!`})
+        res.json(assignment.id)
     })
 }
 
@@ -49,7 +49,7 @@ function updateAssignment(req, res) {
             console.log(err);
             res.send(err)
         } else {
-          res.json({message: 'updated'})
+          res.json("Assignment id=" + req.body._id + " updated");
         }
 
       // console.log('updated ', assignment)
@@ -64,7 +64,7 @@ function deleteAssignment(req, res) {
         if (err) {
             res.send(err);
         }
-        res.json({message: `${assignment.nom} deleted`});
+        res.json(assignment.nom + " deleted");
     })
 }
 
